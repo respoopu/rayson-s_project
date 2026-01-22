@@ -3,41 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop</title>
+  <title>Study Timer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Shop</h1>
+  <h1>Study Session</h1>
 
-  <button class="nav-btn" onclick="location.href='main.html'">Back to Study</button>
+  <button class="nav-btn" onclick="location.href='shop.html'">Go to Shop</button>
 
-  <!-- CHARACTER PREVIEW -->
   <div class="card">
+    <!-- CHARACTER -->
     <div id="character">
-      <img id="base" src="assets/character/default.png">
-      <img id="item" class="item">
-      <img id="mustache" class="accessory">
-      <img id="beret" class="accessory">
-      <img id="scarf" class="accessory">
-      <img id="wine" class="accessory">
+      <img id="base-character" src="assets/character/default.svg">
+      <img id="equipped-item" class="item">
+      <img id="level_1-removebg-preview" class="accessory">
+      <img id="level_2-removebg-preview" class="accessory">
+      <img id="level_3-removebg-preview" class="accessory">
+      <img id="level_4_v2-removebg-preview" class="accessory">
+      <img id="level_5-removebg-preview" class="accessory">
     </div>
-    <button id="unequip-btn" class="secondary">Unequip Item</button>
+
+    <button id="unequip-main" class="secondary">Unequip Item</button>
+
+    <!-- TIMER -->
+    <p id="timer">00:00</p>
+
+    <div>
+      <button id="start">Start</button>
+      <button id="stop" disabled>Stop</button>
+    </div>
+
+    <!-- LEVEL -->
+    <div id="level-display">
+      <p>Level <span id="level">1</span></p>
+      <div class="level-progress-container">
+        <div id="level-progress-bar"></div>
+      </div>
+      <p id="level-progress-text">0h 60m to Level 2</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-value"><span id="xp">0</span></div>
+        <div class="stat-label">XP</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value"><span id="hours">0</span></div>
+        <div class="stat-label">Hours</div>
+      </div>
+    </div>
+
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
   </div>
 
-  <!-- XP DISPLAY -->
-  <div id="stats">
-    <p>Your XP: <span id="xp">0</span></p>
-  </div>
-
-  <!-- SHOP -->
-  <div id="shop">
-    <h2>Items</h2>
-    <div id="shop-items"></div>
-  </div>
-
-  <!-- SCRIPT MUST BE LAST -->
+  <!-- IMPORTANT ORDER -->
   <script src="data.js"></script>
-  <script src="script.js"></script>
+  <script src="main.js"></script>
+
 </body>
 </html>
