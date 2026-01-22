@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Shop</h1>
+
+  <button class="nav-btn" onclick="location.href='main.html'">Back to Study</button>
+
+  <!-- CHARACTER PREVIEW -->
+  <div class="card">
+    <div id="character">
+      <img id="base" src="assets/character/default.png">
+      <img id="item" class="item">
+      <img id="mustache" class="accessory">
+      <img id="beret" class="accessory">
+      <img id="scarf" class="accessory">
+      <img id="wine" class="accessory">
+    </div>
+    <button id="unequip-btn" class="secondary">Unequip Item</button>
+  </div>
+
+  <!-- XP DISPLAY -->
+  <div id="stats">
+    <p>Your XP: <span id="xp">0</span></p>
+  </div>
+
+  <!-- SHOP -->
+  <div id="shop">
+    <h2>Items</h2>
+    <div id="shop-items"></div>
+  </div>
+
+  <!-- SCRIPT MUST BE LAST -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
