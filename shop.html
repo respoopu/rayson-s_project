@@ -4,43 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gutte That Bag - Shop</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="logo-header">
-    <img src="assets/logo.png" alt="Gutte That Bag" class="logo">
-    <h1>Gutte That Bag</h1>
+  <div class="logo-header shop-logo-header">
+    <img src="icon.svg" alt="GTB Icon" class="logo-icon">
+    <img src="logo.png" alt="Gutte That Bag" class="logo-title">
   </div>
 
-  <h2 class="page-title">Shop</h2>
+  <div class="shop-container">
+    <button class="nav-btn" onclick="location.href='index.html'">Back to Study</button>
 
-  <button class="nav-btn" onclick="location.href='index.html'">Back to Study</button>
-
-  <!-- CHARACTER PREVIEW -->
-  <div class="card">
-    <div id="character">
-      <img id="base" src="assets/character/default.svg">
-      <img id="item" class="item">
-      <img id="level_1-removebg-preview" class="accessory">
-      <img id="level_2-removebg-preview" class="accessory">
-      <img id="level_3-removebg-preview" class="accessory">
-      <img id="level_4_v2-removebg-preview" class="accessory">
-      <img id="level_5-removebg-preview" class="accessory">
+    <!-- CHARACTER PREVIEW -->
+    <div class="card shop-card">
+      <div id="character">
+        <img id="base" src="assets/character/basedude.png">
+        <img id="item" class="item">
+        <img id="hat" class="accessory">
+        <img id="scarf" class="accessory">
+        <img id="mustache" class="accessory">
+        <img id="wine" class="accessory">
+      </div>
+      <button id="unequip-btn" class="secondary">Unequip Item</button>
     </div>
-    <button id="unequip-btn" class="secondary">Unequip Item</button>
-  </div>
 
-  <!-- XP DISPLAY -->
-  <div id="stats">
-    <p>Your XP: <span id="xp">0</span></p>
-  </div>
+    <!-- XP DISPLAY -->
+    <div id="stats" class="shop-card">
+      <p>Your XP: <span id="xp">0</span></p>
+    </div>
 
-  <!-- SHOP -->
-  <div id="shop">
-    <h2>Items</h2>
-    <div id="shop-items"></div>
+    <!-- SHOP -->
+    <div id="shop" class="shop-card">
+      <h2>Items</h2>
+      <div id="shop-items"></div>
+    </div>
   </div>
 
   <!-- SCRIPT MUST BE LAST -->

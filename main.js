@@ -129,8 +129,10 @@ function renderCharacter() {
   if (user.equippedItem) {
     itemImg.src = `assets/items/${user.equippedItem}.png`;
     itemImg.style.display = "block";
+    itemImg.setAttribute("data-item", user.equippedItem);
   } else {
     itemImg.style.display = "none";
+    itemImg.removeAttribute("data-item");
   }
 
   // Accessories

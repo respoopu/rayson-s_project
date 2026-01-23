@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="breadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4d03f"/>
+      <stop offset="40%" style="stop-color:#d4a517"/>
+      <stop offset="100%" style="stop-color:#b8860b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Baguette body - diagonal -->
+  <ellipse cx="50" cy="50" rx="45" ry="16" fill="url(#breadGrad)" transform="rotate(-40 50 50)"/>
+
+  <!-- Baguette score marks -->
+  <line x1="22" y1="40" x2="32" y2="50" stroke="#8B6914" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="36" y1="34" x2="46" y2="44" stroke="#8B6914" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="50" y1="28" x2="60" y2="38" stroke="#8B6914" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="64" y1="52" x2="74" y2="62" stroke="#8B6914" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Highlight -->
+  <ellipse cx="42" cy="42" rx="30" ry="7" fill="rgba(255,255,255,0.35)" transform="rotate(-40 50 50)"/>
+</svg>

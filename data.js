@@ -61,11 +61,10 @@ const levels = [
 // Accessory unlock milestones (now based on levels)
 // Names must match the image filenames in assets/accessories/
 const accessories = [
-  { name: "level_1-removebg-preview", unlockAtLevel: 3 },
-  { name: "level_2-removebg-preview", unlockAtLevel: 6 },
-  { name: "level_3-removebg-preview", unlockAtLevel: 10 },
-  { name: "level_4_v2-removebg-preview", unlockAtLevel: 15 },
-  { name: "level_5-removebg-preview", unlockAtLevel: 20 }
+  { name: "hat", unlockAtLevel: 3 },
+  { name: "scarf", unlockAtLevel: 6 },
+  { name: "mustache", unlockAtLevel: 10 },
+  { name: "wine", unlockAtLevel: 15 }
 ];
 
 // Shop items (name must match image filename in assets/items/)

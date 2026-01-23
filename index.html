@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gutte That Bag - Study Timer</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
   <!-- HEADER -->
   <header class="app-header">
     <div class="logo-header">
-      <img src="assets/logo.png" alt="Gutte That Bag" class="logo">
-      <h1>Gutte That Bag</h1>
+      <img src="icon.svg" alt="GTB Icon" class="logo-icon">
+      <img src="logo.png" alt="Gutte That Bag" class="logo-title">
     </div>
     <button class="nav-btn" onclick="location.href='shop.html'">Go to Shop</button>
   </header>
@@ -35,18 +35,6 @@
         <ul id="active-tasks" class="task-list"></ul>
 
         <button id="view-completed-btn" class="secondary small-btn">View Completed</button>
-
-        <!-- Completed Tasks Modal -->
-        <div id="completed-modal" class="modal hidden">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3>Completed Tasks</h3>
-              <button id="close-modal-btn" class="close-btn">&times;</button>
-            </div>
-            <p class="modal-subtitle">From the past 30 days</p>
-            <ul id="completed-tasks" class="task-list completed-list"></ul>
-          </div>
-        </div>
       </div>
     </aside>
 
@@ -55,13 +43,12 @@
       <div class="card study-card">
         <!-- CHARACTER -->
         <div id="character">
-          <img id="base-character" src="assets/character/default.svg">
+          <img id="base-character" src="assets/character/basedude.png">
           <img id="equipped-item" class="item">
-          <img id="level_1-removebg-preview" class="accessory">
-          <img id="level_2-removebg-preview" class="accessory">
-          <img id="level_3-removebg-preview" class="accessory">
-          <img id="level_4_v2-removebg-preview" class="accessory">
-          <img id="level_5-removebg-preview" class="accessory">
+          <img id="hat" class="accessory">
+          <img id="scarf" class="accessory">
+          <img id="mustache" class="accessory">
+          <img id="wine" class="accessory">
         </div>
 
         <button id="unequip-main" class="secondary small-btn">Unequip</button>
@@ -112,6 +99,18 @@
     </aside>
 
   </main>
+
+  <!-- Completed Tasks Modal -->
+  <div id="completed-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Completed Tasks</h3>
+        <button id="close-modal-btn" class="close-btn">&times;</button>
+      </div>
+      <p class="modal-subtitle">From the past 30 days</p>
+      <ul id="completed-tasks" class="task-list completed-list"></ul>
+    </div>
+  </div>
 
   <!-- SCRIPTS -->
   <script src="data.js"></script>
