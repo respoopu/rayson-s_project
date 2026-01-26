@@ -108,6 +108,8 @@ function updateUI() {
   }
 
   renderCharacter();
+  renderTasks();
+  displayDailyQuote();
 
   const unequipBtn = document.getElementById("unequip-btn");
   const unequipMain = document.getElementById("unequip-main");
@@ -118,9 +120,7 @@ function updateUI() {
 startBtn.onclick = startTimer;
 stopBtn.onclick = stopTimer;
 
-checkAccessoryUnlocks();
-saveData();
-updateUI();
+// Note: updateUI() is called from index.html after auth and data are loaded
 
 function renderCharacter() {
   // Equipped item
@@ -147,8 +147,6 @@ function renderCharacter() {
     }
   });
 }
-
-renderCharacter();
 
 function unequipItem() {
   user.equippedItem = null;
@@ -309,9 +307,6 @@ if (completedModal) {
   };
 }
 
-// Initial render of tasks
-renderTasks();
-
 // ----------------------
 // QUOTE OF THE DAY
 // ----------------------
@@ -326,4 +321,4 @@ function displayDailyQuote() {
   quoteAuthorEl.textContent = quote.author;
 }
 
-displayDailyQuote();
+// Note: displayDailyQuote() is called from updateUI() after data loads

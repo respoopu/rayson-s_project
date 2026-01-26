@@ -125,4 +125,9 @@ if (unequipBtn) {
     unequipBtn.onclick = unequipItem;
 }
 
-updateUI();
+// Note: updateUI() is called from shop.html after auth and data are loaded
+
+// Alias for shop.html callback
+function updateCharacter() {
+    renderCharacter();
+}

@@ -1,3 +1,4 @@
+// User data object
 const user = {
   xp: 0,
   studySeconds: 0,
@@ -14,25 +15,57 @@ const user = {
 
 const MAX_ACTIVE_TASKS = 6;
 
-function saveData() {
-  localStorage.setItem("studyUser", JSON.stringify(user));
+// Save data to Firestore
+async function saveData() {
+  const userId = getCurrentUserId();
+  if (!userId) return;
+
+  try {
+    await db.collection('users').doc(userId).update({
+      xp: user.xp,
+      studySeconds: user.studySeconds,
+      progress: user.progress,
+      ownedItems: user.ownedItems,
+      equippedItem: user.equippedItem,
+      unlockedAccessories: user.unlockedAccessories,
+      activeTasks: user.activeTasks,
+      completedTasks: user.completedTasks
+    });
+  } catch (error) {
+    console.error("Error saving data:", error);
+  }
 }
 
-function loadData() {
-  const data = localStorage.getItem("studyUser");
-  if (data) {
-    Object.assign(user, JSON.parse(data));
+// Load data from Firestore
+async function loadData() {
+  const userId = getCurrentUserId();
+  if (!userId) return;
+
+  try {
+    const doc = await db.collection('users').doc(userId).get();
+    if (doc.exists) {
+      const data = doc.data();
+      user.xp = data.xp || 0;
+      user.studySeconds = data.studySeconds || 0;
+      user.progress = data.progress || 0;
+      user.ownedItems = data.ownedItems || [];
+      user.equippedItem = data.equippedItem || null;
+      user.unlockedAccessories = data.unlockedAccessories || [];
+      user.activeTasks = data.activeTasks || [];
+      user.completedTasks = data.completedTasks || [];
+
+      // Clean up old completed tasks
+      cleanOldCompletedTasks();
+    }
+  } catch (error) {
+    console.error("Error loading data:", error);
   }
-  // Clean up completed tasks older than 1 month
-  cleanOldCompletedTasks();
 }
 
 function cleanOldCompletedTasks() {
   const oneMonthAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
   user.completedTasks = user.completedTasks.filter(task => task.completedAt > oneMonthAgo);
 }
-
-loadData();
 
 // Level thresholds (in minutes of study time)
 const levels = [
